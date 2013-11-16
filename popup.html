@@ -1,106 +1,63 @@
 <html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <style type="text/css">
-	  body {width:280px;font-size: 13px;margin:0;font-family: Arial;}ul {padding: 0;margin: 10px 0;}#selectbox li {list-style: none;line-height: 24px;cursor: pointer;margin-left:8px;}#selectbox li span{display: inline-block;width: 13px;height: 13px;border: 1px solid #bebebe;background: -webkit-linear-gradient(#fff,#e9e9e9);border-radius: 2px;position: relative;top: 3px;margin-right: 20px;}#selectbox li.checked span{background: url("images/icon/check.png") center center no-repeat, -webkit-linear-gradient(#fff,#e9e9e9);}.text-block {color:#205fa0;}.text-block li {padding-left:40px;position: relative;line-height:22px;font-size:12px;}.text-block li span {display: none;width:9px;height:10px;background: url("images/icon/close.png") no-repeat;position: absolute;left: 13px;top: 7px;cursor: pointer;}.text-block li:hover {background: #f6f6f6;}.text-block li:hover span {display: block;}
-	  .title {
-		height:34px;
-		line-height:34px;
-		border-bottom:1px solid #DBDBDB;
-		font-weight:bold;
-		font-size:14px;
-		margin:0 8px;
-		position:relative;
-	  }
-	  .menu {
-		float:right;
-		margin: 5px 0 0 0;
-	  }
-	  .menu li {
-	  	float:left;
-	  	position: relative;
-	  	width:28px;
-	  	height:100%;
-	  	margin-top:5px;
-	  	cursor: pointer;
-	  }
-	  .menu li .hide {
-	  	position: absolute;
-	  	top: 22px;
-	  	border:1px solid #c4c4c4;
-	  	border-radius: 3px;
-	  	box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-	  	display: none;
-	  	font-size: 12px;
-	  	color:#474747;
-	  	line-height: 15px;
-	  	padding:8px;
-	  	font-weight: normal;
-	  	background:#fff;
-	  	z-index: 2;
-	  }
-	  .menu li .hide:before {
-	  	content:"";
-	  	display: block;
-	  	position: absolute;
-	  	top: -5px;
-	  	background: #fff;
-	  	width:7px;
-	  	height:7px;
-	  	border-right:1px solid #c4c4c4;
-	  	border-top:1px solid #c4c4c4;
-	  	-webkit-transform:rotate(-45deg);
-	  	transform:rotate(-45deg);
-	  }
-	  .menu li:hover .hide {
-	  	display: block;
-	  }
 
-	  .help .hide {
-		width: 253px;
-		right: -4px;
-	  }
-	  .help .hide:before {
-	  	right:20px;
-	  }
-	  .share .hide {
-		width: 114px;
-		right: -35px;
-	  }
-	  .share .hide:before {
-	  	right:48px;
-	  }
-	  .share .hide a {
-	  	display: inline-block;
-	  	margin-right:6px;
-	  }
-	  </style>
-   </head>
-   <body>
-	<div class="title">VkClean 
-	<ul class="menu">
-		<li title="Наше сообщество" class="users"><a href="http://vk.com/snazzis" target="_blank"><img src="images/icon/users.png"></a></li>
-		<li title="Оставить отзыв" class="star"><a href="https://chrome.google.com/webstore/detail/vkclean/pfcgfmcgneinaejdldjmmpgiacnocoag/reviews"  target="_blank"><img src="images/icon/star.png"></a></li>
-		<li class="share"><img src="images/icon/share.png" title="Поделиться с друзьями" >
-		 <span class="hide">
-		 	<a href="http://vk.com/share.php?url=http://vkclean.com/"><img src="images/icon/vk.png"></a>
-		 	<a href="https://www.facebook.com/sharer.php?u=http://vkclean.com/"><img src="images/icon/fb.png"></a>
-		 	<a href="https://plus.google.com/share?url=http://snazzis.com/"><img src="images/icon/g+.png"></a>
-		 	<a href="https://twitter.com/share?text=Сделай свой Вконтакте чистым - без рекламы и перепостов&url=http://vkclean.com/"><img src="images/icon/tw.png"></a>
-		 </span>
-		</li>
-		<li class="help"><img src="images/icon/help.png"><span class="hide">Для добавления фильтра, выделите ссылку, нажмите правую кнопку мыши и выберите пункт "Добавить в список фильтров"</span></li>
-	</ul>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div class="title">VkClean
+		<ul class="menu">
+			<li title="Наше сообщество" class="users">
+				<a href="http://vk.com/snazzis" target="_blank">
+					<img src="images/icon/users.png">
+				</a>
+			</li>
+			<li title="Оставить отзыв" class="star">
+				<a href="https://chrome.google.com/webstore/detail/vkclean/pfcgfmcgneinaejdldjmmpgiacnocoag/reviews" target="_blank">
+					<img src="images/icon/star.png">
+				</a>
+			</li>
+			<li class="share">
+				<img src="images/icon/share.png" title="Поделиться с друзьями">
+				<span class="hide">
+					<a href="http://vk.com/share.php?url=http://vkclean.com/">
+						<img src="images/icon/vk.png">
+					</a>
+					<a href="https://www.facebook.com/sharer.php?u=http://vkclean.com/">
+						<img src="images/icon/fb.png">
+					</a>
+					<a href="https://plus.google.com/share?url=http://snazzis.com/">
+						<img src="images/icon/g+.png">
+					</a>
+					<a href="https://twitter.com/share?text=Сделай свой Вконтакте чистым - без рекламы и перепостов&url=http://vkclean.com/">
+						<img src="images/icon/tw.png">
+					</a>
+				</span>
+			</li>
+			<li class="help">
+				<img src="images/icon/help.png">
+				<span class="hide">Для добавления фильтра, выделите ссылку, нажмите правую кнопку мыши и выберите пункт "Добавить в список фильтров"</span>
+			</li>
+		</ul>
 	</div>
-      <ul id="selectbox">
-         <li id="add"><span></span>Скрывать рекламный блок
-         <li id="apps"><span></span>Скрывать новости от приложений
-         <li id="repost"><span></span>Скрывать репосты в ленте
-         <li id="short_link"><span></span>Скрывать новости с сокращенными ссылками
-         <li id="vkclean"><span></span>Использовать фильтры VkClean
-         <li id="link"><span></span>Скрывать новости со ссылками:
-      </ul>
-      <ul class="text-block"></ul>
-      <script src="js/jquery.js"></script><script src="js/background.js"></script>
-   </body>
+	<ul id="selectbox">
+		<li id="add">
+			<span></span>Скрывать рекламный блок
+			<li id="apps">
+				<span></span>Скрывать новости от приложений
+				<li id="repost">
+					<span></span>Скрывать репосты в ленте
+					<li id="short_link">
+						<span></span>Скрывать новости с сокращенными ссылками
+						<li id="vkclean">
+							<span></span>Использовать фильтры VkClean
+							<li id="link">
+								<span></span>Скрывать новости со ссылками:
+	</ul>
+	<ul class="text-block"></ul>
+	<script src="js/jquery.js"></script>
+	<script src="js/background.js"></script>
+</body>
+
 </html>
