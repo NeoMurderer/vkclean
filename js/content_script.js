@@ -136,7 +136,7 @@ var interval = window.setInterval(function() {
 				$("#left_ads").css("display", "none")
 			}
 			if (items.apps == true) {
-				$(".wall_post_source_default").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
+				$(".wall_post_text a:not(.wall_post_more):contains('vk.com/app')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 			if (items.short_link == true) {
 				$(".wall_post_text a:not(.wall_post_more):contains('vk.cc')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
