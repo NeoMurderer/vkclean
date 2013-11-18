@@ -142,7 +142,7 @@ var interval = window.setInterval(function() {
 				$(".wall_post_text a:not(.wall_post_more):contains('vk.cc')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 			if (items.repost == true) {
-				$("#main_feed .published_by_date,#main_feed .group_share").css("display", "none").addClass("deleted").parent().addClass("deleted");
+				$("#main_feed .published_by_date,#main_feed .group_share,#main_feed .published_by_wrap").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 		})
 	}
