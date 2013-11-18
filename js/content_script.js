@@ -18,7 +18,7 @@ var interval = window.setInterval(function() {
 }, 2000)
 
 	function removeAdd(filters) {
-		console.log("removeAdd");
+		//console.log("removeAdd");
 		for (i = 0, j = filters.length; i < j; i++) {
 			for (k = 0, length = item.length; k < length; k++) {
 				if (item[k].indexOf(filters[i]) > -1) {
@@ -60,7 +60,7 @@ var interval = window.setInterval(function() {
 	}
 
 	function clean() {
-		console.log("clean");
+		//console.log("clean");
 		for (i = 0, j = filter.length; i < j; i++) {
 			for (k = 0, length = item.length; k < length; k++) {
 				if (prover(filter[i], item[k])) {
@@ -92,7 +92,9 @@ var interval = window.setInterval(function() {
 
 	function Add() {
 		chrome.storage.sync.get(function(items) {
+			//console.log(items)
 			if (items.link == true) {
+				var linkClear = true;
 				var block = $(".post:not(.deleted)").find(".wall_post_text a:not(.wall_post_more),.wall_text .media_desc span:not(.wall_postlink_preview_btn_label)").toArray();
 				for (var i = block.length - 1; i >= 0; i--) {
 					var link = block[i].innerText.replace(/[^a-zA-Zа-я-А-ЯёЁ0-9]/g, '').toLowerCase();
@@ -113,24 +115,27 @@ var interval = window.setInterval(function() {
 
 					}
 				};
-				if (items.vkclean == true && (items.update == true || load == true)) {
-					clean();
-				}
 				if (items.text && (items.update == true || load == true))
 					list = JSON.parse(items.text);
 				else {
-					return false;
+					linkClear = false;
 				}
-				chrome.storage.sync.set({
-					update: false
-				})
+				if (linkClear) {
+
+					if (items.vkclean == true && (items.update == true || load == true)) {
+						clean();
+					}
+					chrome.storage.sync.set({
+						update: false
+					})
+
+
+					for (i = 0, j = list.length; i < j; i++) {
+						list[i] = list[i].replace(/[^a-zA-Zа-я-А-ЯёЁ0-9]/g, '').toLowerCase();
+					}
+					removeAdd(list);
+				}
 				load = false;
-
-
-				for (i = 0, j = list.length; i < j; i++) {
-					list[i] = list[i].replace(/[^a-zA-Zа-я-А-ЯёЁ0-9]/g, '').toLowerCase();
-				}
-				removeAdd(list);
 			}
 			if (items.add == true) {
 				$("#left_ads").css("display", "none")
@@ -142,7 +147,10 @@ var interval = window.setInterval(function() {
 				$(".wall_post_text a:not(.wall_post_more):contains('vk.cc')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 			if (items.repost == true) {
+				console.log("clear repost")
 				$("#main_feed .published_by_date,#main_feed .group_share,#main_feed .published_by_wrap").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
+			} else {
+				//console.log(items.repost)
 			}
 		})
 	}
