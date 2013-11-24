@@ -144,7 +144,7 @@ var interval = window.setInterval(function() {
 				$(".wall_post_text a:not(.wall_post_more):contains('vk.com/app')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 			if (items.short_link == true) {
-				$(".wall_post_text a:not(.wall_post_more):contains('vk.cc')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
+				$(".wall_post_text a:not(.wall_post_more):contains('vk.cc'),.wall_post_text a:not(.wall_post_more):contains('bit.ly')").closest(".post").css("display", "none").addClass("deleted").parent().addClass("deleted");
 			}
 			if (items.repost == true) {
 				console.log("clear repost")
